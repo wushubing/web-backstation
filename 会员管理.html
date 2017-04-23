@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>会员管理</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	<link rel="stylesheet" type="text/css" href="css/商城设置.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="http://cdn.bootcss.com/angular.js/1.4.6/angular.js"></script>
+	<script src="js/echarts.js"></script>
+    <script src="//cdn.bootcss.com/vue-resource/1.2.0/vue-resource.js"></script>
+</head>
+<body>
+	<nav class="navbar">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed btn-lg" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-tree-deciduous"></span>大术</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav navbar-right"> 
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;DASHU<span class="caret"></span></a>
+		          <ul class="dropdown-menu dropdown-menu-right">
+		            <li><a href="#">我的账户</a></li>
+		            <li><a href="#">网站维护</a></li>
+		            <li><a href="#">信息报告</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="#">退出登录</a></li>
+		          </ul>
+		        </li>
+		        <li><a href="#"><span class="glyphicon glyphicon-leaf"></span></a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav> 
+	<div class="col-md-2">
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  	<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          后台首页
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+    	<ul>
+    		<li><a href="#" class="list-group-item">系统介绍</a></li>
+        	<li><a href="#" class="list-group-item">制作人员</a></li>
+		  	<li><a href="#" class="list-group-item">客户反馈</a></li>
+    	</ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          系统设置
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <ul style="list-style: none; ">
+        	<li><a href="商品管理.html" class="list-group-item">商品管理</a></li>
+        	<li><a href="#" class="list-group-item">商家管理</a></li>
+		  	<li><a href="订单管理.html" class="list-group-item">订单管理</a></li>
+		  	<li><a href="会员管理.html" class="list-group-item active">会员管理</a></li>
+		  	<li><a href="#" class="list-group-item">店铺管理</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          个人中心
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        <ul>
+        	<li><a href="register.html" class="list-group-item">注册用户</a></li>
+        	<li><a href="landing page.html" class="list-group-item">用户登录</a></li>
+        	<li><a href="#" class="list-group-item">修改密码</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+	</div> 
+	<div class="col-md-10">
+		<ol class="breadcrumb">
+  		<li><a href="#">系统</a></li>
+  		<li class="active">会员管理</li>
+		</ol>
+		<div id="app">
+
+    <div class="form-group col-md-9">
+    <input type="text" id="searchbar" class="form-control" placeholder="搜索名称或id" v-model="searchData">
+  </div>
+  <button type="submit" class="btn btn-default col-md-2" style="margin:0 10px 20px 10px;">查询</button>     
+        
+        <table class="table table-striped" >
+            <thead>
+                <tr>
+                	<th></th>
+                    <th>头像</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>年龄</th>
+                    <th>身份ID</th>
+                    <th>地址</th>
+                    <th>级别</th>
+                    <th>类型</th>
+                    <th>备注</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="contable">
+                <tr v-for="person in people | filterBy searchData in 'name' 'sex'">
+                    <!-- <td><img src="{{ person.pic }}"></td> -->
+                    <td><input type="radio" name=""></td>
+                    <td>{{ person.pic }}</td>
+                    <td>{{ person.name }}</td>
+                    <td>{{ person.sex }}</td>
+                    <td>{{ person.age }}</td>
+                    <td>{{ person.ID }}</td>
+                    <td>{{ person.adr }}</td>
+                    <td>{{ person.level }}</td>
+                    <td>{{ person.type }}</td>
+                    <td>{{ person.more }}</td>
+                    <td >
+                    <button @click="deletePerson(index)">Delete</button>&nbsp;&nbsp;
+                    <button data-toggle="modal" data-target=".bs-example-modal-lg" @click="editPerson(person)">Edit</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+              <td>2017.2.28</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>操作员：ada</td>
+            </tfoot>
+        </table>
+        <script>
+            window.onload=function(){
+                $.ajax({
+                    //+ Math.random()为了清除缓存
+                    url:"http://localhost/section2/FBMS/men_receive.php",
+                    type:"get",
+                    dataType:'json',
+
+                    success : function(results){
+                        results = results.people;
+                        var htmlNodes = '';
+                        // var results = eval("("+result+")");
+                        for (var i = 0; i < results.length; i++) {
+                            htmlNodes += '<tr><td><input type="radio" name=""></td><td>'+ results[i].pic +'</td><td>'+ results[i].name +'</td><td>'+ results[i].sex +'</td><td>'+ results[i].age +'</td><td>'+ results[i].ID +'</td><td>'+ results[i].adr +'</td><td>'+ results[i].level +'</td><td>'+ results[i].type +'</td><td>'+ results[i].more +'</td></tr>';
+                        }
+                        $('#contable').append(htmlNodes);
+                        console.log(results.length);
+                        // var results = eval("("+result+")");
+                        // $.each(results,function(index,item) {
+                        //     var ID = results[index].ID;
+                        //     var name = results[index].name;
+                        //     var sex = results[index].sex;
+                        // })
+                    } 
+                })
+            }
+        </script>
+
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">添加会员</button>
+
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+            
+              <fieldset>
+                <legend>
+                    添加会员
+                </legend>
+                <form action="http://localhost/section2/FBMS/member.php" method="post">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">头像：</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="pic" v-model="newPerson.pic" />
+                    </div>
+                </div>
+                <br/>
+                
+                <div class="form-group">
+                    <label class="col-md-2 control-label">姓名：</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="name" v-model="newPerson.name" />
+                    </div>
+                </div><br/>
+                
+                <div class="form-group">
+                    <label class="col-md-2 control-label">性别：</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="sex" v-model="newPerson.sex" />
+                    </div>
+                </div><br/>
+                
+                <div class="form-group">
+                    <label class="col-md-2 control-label">年龄：</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="age" v-model="newPerson.age" />
+                    </div>
+                </div><br/>
+                
+                <div class="form-group">
+                    <label class="col-md-2 control-label">身份ID：</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="ID" v-model="newPerson.ID" />
+                    </div>
+                </div><br/>
+                
+                <div class="form-group">
+                    <label class="col-md-2 control-label">地址：</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="adr" v-model="newPerson.adr"/>
+                    </div>
+                </div><br/>
+                
+                <div class="form-group">
+                    <label class="col-md-2 control-label">会员等级：</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="level" v-model="newPerson.level" />
+                    </div>
+                </div><br/>
+               
+                <div class="form-group">
+                    <label class="col-md-2 control-label">会员类型：</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="type" v-model="newPerson.type"/>
+                    </div>
+                </div><br/>
+                
+                <div class="form-group">
+                    <label class="col-md-2 control-label">备注：</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="more" v-model="newPerson.more"/>
+                    </div>
+                </div><br/>
+                <div class="form-group">
+                <button type="submit" class="btn btn-primary col-md-offset-6" id="btnsub" @click="createPerson">&nbsp;确&nbsp; &nbsp;定&nbsp;</button>
+                </div> </form>
+                <script src="js/ajax.js"></script>
+        </fieldset>
+       
+    </div>
+  </div>
+</div>
+        </div>
+        <script src="js/vue1.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                newPerson: {
+                    Id: '0',
+                    pic: '',
+                    name: '',
+                    sex: '',
+                    age: '',
+                    ID: '',
+                    adr: '',
+                    level: '',
+                    type: '',
+                    more: ''
+                },
+                people: [{
+                    Id: '1',
+                    pic: '',
+                    name: 'jack',
+                    sex: '男',
+                    age: '25',
+                    ID: 35001,
+                    adr: '北京市',
+                    level: 'Lv67',
+                    type: '终生会员',
+                    more: ''
+                }, {
+                    Id: '2',
+                    pic: '',
+                    name: 'lucy',
+                    sex: '女',
+                    age: '32',
+                    ID: 35002,
+                    adr: '重庆市',
+                    level: 'Lv34',
+                    type: '黄金会员',
+                    more: ''
+                }, {
+                    Id: '3',
+                    pic: '',
+                    name: 'nacy',
+                    sex: '女',
+                    age: '21',
+                    ID: 35003,
+                    adr: '重庆市',
+                    level: 'Lv26',
+                    type: '白银会员',
+                    more: ''
+                }, {
+                    Id: '4',
+                    pic: '',
+                    name: 'hally',
+                    sex: '男',
+                    age: '45',
+                    ID: 35004,
+                    adr: '天津市',
+                    level: 'Lv56',
+                    type: '白金会员',
+                    more: ''
+                }],
+                pagesize: 5,
+                curpage:1,
+            },
+            methods:{
+                // ready: function () {
+                //     this.$http.get('men_receive.php').then (function(data) {
+                //         this.posts=response.data;
+                //     })
+                // },
+                createPerson: function(){
+                  if (this.newPerson.Id== 0) {
+                    this.newPerson.Id = this.people.length + 1;
+                    this.people.push(this.newPerson);
+                  }  
+                },
+                deletePerson: function(index){
+                    // 删一个数组元素
+                    this.people.splice(index,1);
+                },
+                editPerson: function(Person) {
+                  this.newPerson = Person;
+                }
+            }
+        })
+    </script>
+    <nav aria-label="Page navigation" style="float: right;">
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>	
+</div>
+</body>
+</html>

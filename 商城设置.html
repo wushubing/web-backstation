@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>商城设置</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	<link rel="stylesheet" type="text/css" href="css/商城设置.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="http://cdn.bootcss.com/angular.js/1.4.6/angular.js"></script>
+</head>
+<body>
+	<nav class="navbar">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed btn-lg" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-tree-deciduous"></span>大术</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav navbar-right"> 
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;DASHU<span class="caret"></span></a>
+		          <ul class="dropdown-menu dropdown-menu-right">
+		            <li><a href="#">我的账户</a></li>
+		            <li><a href="#">网站维护</a></li>
+		            <li><a href="#">信息报告</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="#">退出登录</a></li>
+		          </ul>
+		        </li>
+		        <li><a href="#"><span class="glyphicon glyphicon-leaf"></span></a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav> 
+	<div class="col-md-2">
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  	<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          后台首页
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+    	<ul>
+    		<li><a href="#" class="list-group-item">系统介绍</a></li>
+        	<li><a href="#" class="list-group-item">制作人员</a></li>
+		  	<li><a href="#" class="list-group-item">客户反馈</a></li>
+    	</ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          系统设置
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <ul style="list-style: none; ">
+        	<li><a href="商品管理.html" class="list-group-item">商品管理</a></li>
+        	<li><a href="#" class="list-group-item">商家管理</a></li>
+		  	<li><a href="订单管理.html" class="list-group-item">订单管理</a></li>
+		  	<li><a href="会员管理.html" class="list-group-item">会员管理</a></li>
+		  	<li><a href="#" class="list-group-item">店铺管理</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          个人中心
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        <ul>
+        	<li><a href="register.html" class="list-group-item">注册用户</a></li>
+        	<li><a href="landing page.html" class="list-group-item">用户登录</a></li>
+        	<li><a href="#" class="list-group-item">修改密码</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+		<!-- <div class="list-group">
+		  	<a href="#" class="list-group-item active">后台首页</a>
+		  	<a href="#" class="list-group-item">系统设置</a>
+		  	<a href="#" class="list-group-item">商品管理</a>
+		  	<a href="#" class="list-group-item">商家管理</a>
+		  	<a href="#" class="list-group-item">订单管理</a>
+		  	<a href="#" class="list-group-item">用户管理</a>
+		  	<a href="#" class="list-group-item">店铺管理</a>
+		  	<a href="#" class="list-group-item">个人中心</a>
+		</div> -->
+	</div> 
+	<div class="col-md-10">
+		<ol class="breadcrumb">
+  		<li><a href="#">系统</a></li>
+  		<li class="active">后台首页</li>
+		</ol>
+		<div class="jumbotron">
+  			<h2>欢迎使用天枢后台操作系统</h2>
+  			<p>本系统专为大型集成类网站开发，可用于航天、军事、电子、电商等大型多用途网站。</p>
+  			<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+		</div>
+		<div class="row">
+		  <div class="col-sm-6 col-md-4">
+		    <div class="thumbnail">
+		      <img src="faces/1a.png" alt="..." class="img-circle">
+		      <div class="caption">
+		        <h3>Jack Androd</h3>
+		        <p>毕业于麻省理工计算机技术学院，在业内享有盛名，擅长吃喝嫖赌抽，坑蒙拐骗偷。</p>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-6 col-md-4">
+		    <div class="thumbnail">
+		      <img src="faces/3a.png" alt="..." class="img-circle">
+		      <div class="caption">
+		        <h3>Jack Androd</h3>
+		        <p>毕业于麻省理工计算机技术学院，在业内享有盛名，擅长吃喝嫖赌抽，坑蒙拐骗偷。</p>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-6 col-md-4">
+		    <div class="thumbnail">
+		      <img src="faces/2a.png" alt="..." class="img-circle">
+		      <div class="caption">
+		        <h3>Jack Androd</h3>
+		        <p>毕业于麻省理工计算机技术学院，在业内享有盛名，擅长吃喝嫖赌抽，坑蒙拐骗偷。</p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="page-header">
+  		<h1>客户反馈</h1>
+		</div>
+		<div class="media">
+  			<div class="media-left">
+    		<a href="#">
+      		<img class="media-object" src="faces/1b.png" alt="...">
+    		</a>
+  			</div>
+  			<div class="media-body">
+    		<h4 class="media-heading">益于心之所善兮，虽九死其犹未悔</h4>
+    		<p>北斗星在不同的季节和夜晚不同的时间，出现于天空不同的方位，所以古人就根据初昏时斗柄所指的方向来决定季节：斗柄指东，天下皆春；斗柄指南，天下皆夏；斗柄指西，天下皆秋；斗柄指北，天下皆冬。
+北斗七星从斗身上端开始，到斗柄的末尾，按顺序依次命名为α、β、γ、δ、ε、ζ、η，中国古代天文学家分别把它们称作：天枢、天璇、天玑、天权、玉衡、开阳、瑶光。从“天璇”通过“天枢”向外延伸一条直线，大约延长5倍多些，就可见到一颗和北斗七星差不多亮的星星,这就是北极星。
+道教称北斗七星为七元解厄星君，居北斗七宫，即：天枢宫贪狼星君、天璇宫巨门星君、天玑宫禄存星君、天权宫文曲星君、玉衡宫廉贞星君、开阳宫武曲星君、瑶光宫破军星君...</p>
+  		</div>
+  		<div class="media">
+  			<div class="media-left">
+    		<a href="#">
+      		<img class="media-object" src="faces/2b.png" alt="...">
+    		</a>
+  			</div>
+  			<div class="media-body">
+    		<h4 class="media-heading">益于心之所善兮，虽九死其犹未悔</h4>
+    		<p>北斗星在不同的季节和夜晚不同的时间，出现于天空不同的方位，所以古人就根据初昏时斗柄所指的方向来决定季节：斗柄指东，天下皆春；斗柄指南，天下皆夏；斗柄指西，天下皆秋；斗柄指北，天下皆冬。
+北斗七星从斗身上端开始，到斗柄的末尾，按顺序依次命名为α、β、γ、δ、ε、ζ、η，中国古代天文学家分别把它们称作：天枢、天璇、天玑、天权、玉衡、开阳、瑶光。从“天璇”通过“天枢”向外延伸一条直线，大约延长5倍多些，就可见到一颗和北斗七星差不多亮的星星,这就是北极星。
+道教称北斗七星为七元解厄星君，居北斗七宫，即：天枢宫贪狼星君、天璇宫巨门星君、天玑宫禄存星君、天权宫文曲星君、玉衡宫廉贞星君、开阳宫武曲星君、瑶光宫破军星君...</p>
+  		</div>
+  		<div class="media">
+  			<div class="media-left">
+    		<a href="#">
+      		<img class="media-object" src="faces/3b.png" alt="...">
+    		</a>
+  			</div>
+  			<div class="media-body">
+    		<h4 class="media-heading">益于心之所善兮，虽九死其犹未悔</h4>
+    		<p>北斗星在不同的季节和夜晚不同的时间，出现于天空不同的方位，所以古人就根据初昏时斗柄所指的方向来决定季节：斗柄指东，天下皆春；斗柄指南，天下皆夏；斗柄指西，天下皆秋；斗柄指北，天下皆冬。
+北斗七星从斗身上端开始，到斗柄的末尾，按顺序依次命名为α、β、γ、δ、ε、ζ、η，中国古代天文学家分别把它们称作：天枢、天璇、天玑、天权、玉衡、开阳、瑶光。从“天璇”通过“天枢”向外延伸一条直线，大约延长5倍多些，就可见到一颗和北斗七星差不多亮的星星,这就是北极星。
+道教称北斗七星为七元解厄星君，居北斗七宫，即：天枢宫贪狼星君、天璇宫巨门星君、天玑宫禄存星君、天权宫文曲星君、玉衡宫廉贞星君、开阳宫武曲星君、瑶光宫破军星君...</p>
+  		</div>
+</div>
+<div class="col-md-12">
+	
+</div>
+</body>
+</html>

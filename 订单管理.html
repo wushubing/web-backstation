@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>订单管理</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	<link rel="stylesheet" type="text/css" href="css/商城设置.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="http://cdn.bootcss.com/angular.js/1.4.6/angular.js"></script>
+	<script src="js/echarts.js"></script>
+</head>
+<body>
+	<nav class="navbar">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed btn-lg" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-tree-deciduous"></span>大术</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav navbar-right"> 
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;DASHU<span class="caret"></span></a>
+		          <ul class="dropdown-menu dropdown-menu-right">
+		            <li><a href="#">我的账户</a></li>
+		            <li><a href="#">网站维护</a></li>
+		            <li><a href="#">信息报告</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="#">退出登录</a></li>
+		          </ul>
+		        </li>
+		        <li><a href="#"><span class="glyphicon glyphicon-leaf"></span></a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav> 
+	<div class="col-md-2">
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  	<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          后台首页
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+    	<ul>
+    		<li><a href="#" class="list-group-item">系统介绍</a></li>
+        	<li><a href="#" class="list-group-item">制作人员</a></li>
+		  	<li><a href="#" class="list-group-item">客户反馈</a></li>
+    	</ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          系统设置
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <ul style="list-style: none; ">
+        	<li><a href="商品管理.html" class="list-group-item">商品管理</a></li>
+        	<li><a href="#" class="list-group-item">商家管理</a></li>
+		  	<li><a href="订单管理.html" class="list-group-item active">订单管理</a></li>
+		  	<li><a href="会员管理.html" class="list-group-item">会员管理</a></li>
+		  	<li><a href="#" class="list-group-item">店铺管理</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          个人中心
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        <ul>
+        	<li><a href="register.html" class="list-group-item">注册用户</a></li>
+        	<li><a href="landing page.html" class="list-group-item">用户登录</a></li>
+        	<li><a href="#" class="list-group-item">修改密码</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+	</div> 
+	<div class="col-md-10">
+		<ol class="breadcrumb">
+  		<li><a href="#">系统</a></li>
+  		<li class="active">订单管理</li>
+		</ol>
+ 		<div style="width: 90%;height: 400px;" id="chart"></div> 
+		 <script type="text/javascript">
+			var myChart = echarts.init(document.getElementById('chart'));
+			var option = {
+				title: {
+					text: '商品种类'
+				},
+				tooltip: {},
+				legend: {
+					data:['商品数量']
+				},
+				xAxis: {
+					data:["食品","日用品","饰品","服装","电子产品"]
+				},
+				yAxis: {},
+				series: [{
+					name: '商品数量',
+					type: 'bar',
+					data: [10,20,15,24,9]
+				}]
+			};
+			myChart.setOption(option);
+		</script>
+		<div>
+			
+		</div>
+</div>
+<div class="col-md-12">
+	
+</div>
+</body>
+</html>

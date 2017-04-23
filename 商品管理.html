@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>商城设置</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	<link rel="stylesheet" type="text/css" href="css/商城设置.css">
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="http://cdn.bootcss.com/angular.js/1.4.6/angular.js"></script>
+ <style type="text/css">
+   .form-group{
+    margin: 20px auto;
+   }
+ </style>
+</head>
+<body>
+	<nav class="navbar">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed btn-lg" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-tree-deciduous"></span>大术</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav navbar-right"> 
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;DASHU<span class="caret"></span></a>
+		          <ul class="dropdown-menu dropdown-menu-right">
+		            <li><a href="#">我的账户</a></li>
+		            <li><a href="#">网站维护</a></li>
+		            <li><a href="#">信息报告</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="#">退出登录</a></li>
+		          </ul>
+		        </li>
+		        <li><a href="#"><span class="glyphicon glyphicon-leaf"></span></a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav> 
+	<div class="col-md-2">
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  	<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          后台首页
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+    	<ul>
+    		<li><a href="#" class="list-group-item">系统介绍</a></li>
+        	<li><a href="#" class="list-group-item">制作人员</a></li>
+		  	<li><a href="#" class="list-group-item">客户反馈</a></li>
+    	</ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          系统设置
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <ul style="list-style: none; ">
+        	<li><a href="商品管理.html" class="list-group-item active">商品管理</a></li>
+          <li><a href="#" class="list-group-item">商家管理</a></li>
+        <li><a href="订单管理.html" class="list-group-item">订单管理</a></li>
+        <li><a href="会员管理.html" class="list-group-item">会员管理</a></li>
+        <li><a href="#" class="list-group-item">店铺管理</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          个人中心
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        <ul>
+        	<li><a href="register.html" class="list-group-item">注册用户</a></li>
+        	<li><a href="landing page.html" class="list-group-item">用户登录</a></li>
+        	<li><a href="#" class="list-group-item">修改密码</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="col-md-9">
+    <ol class="breadcrumb">
+      <li><a href="#">系统</a></li>
+      <li class="active">商品管理</li>
+    </ol>
+    <div id="app">
+
+    <div class="form-group col-md-9">
+    <input type="text" id="searchbar" class="form-control" placeholder="搜索名称或产地" v-model="searchData">
+  </div>
+  <button type="submit" class="btn btn-default col-md-2" style="margin: 20px 10px;">查询</button>     
+        <hr/>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>商品图片</th>
+                    <th>商品名称</th>
+                    <th>商品数量</th>
+                    <th>产地</th>
+                    <th>备注</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="person in people | filterBy searchData in 'name' 'sex'">
+                    <!-- <td><img src="{{ person.pic }}"></td> -->
+                    <td>{{ person.pic }}</td>
+                    <td>{{ person.name }}</td>
+                    <td>{{ person.age }}</td>
+                    <td>{{ person.sex }}</td>
+                    <td>{{ person.more }}</td>
+                    <td >
+                    <button @click="deletePerson(index)">Delete</button>&nbsp;&nbsp;
+                    <button data-toggle="modal" data-target=".bs-example-modal-lg" @click="editPerson(person)">Edit</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+              <td>2017.2.28</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>操作员：ada</td>
+            </tfoot>
+        </table>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">添加商品</button>
+
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <fieldset>
+                <legend>
+                    添加商品
+                </legend>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">商品图片：</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" v-model="newPerson.pic" />
+                    </div>
+                </div><br/>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">商品名称：</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" v-model="newPerson.name" />
+                    </div>
+                </div><br/>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">商品数量：</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" v-model="newPerson.age" />
+                    </div>
+                </div><br/>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">产地：</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" v-model="newPerson.sex"/>
+                    </div>
+                </div><br/>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">备注：</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" v-model="newPerson.more"/>
+                    </div>
+                </div><br/>
+                <div class="form-group">
+                <button type="submit" class="btn btn-primary col-md-offset-6" @click="createPerson">&nbsp;确&nbsp; &nbsp;定&nbsp;</button>
+                </div>
+        </fieldset>
+    </div>
+  </div>
+</div>
+        </div>
+        <script src="js/vue1.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                newPerson: {
+                    Id: '0',
+                    pic: '',
+                    name: '',
+                    age: 0,
+                    sex: '',
+                    more: ''
+                },
+                people: [{
+                    Id: '1',
+                    pic: '',
+                    name: '50°茅台飞天',
+                    age: 30,
+                    sex: '贵州省，中国',
+                    more: ''
+                }, {
+                    Id: '2',
+                    pic: '',
+                    name: '毛子伏特加',
+                    age: 26,
+                    sex: '莫斯科，俄罗斯',
+                    more: ''
+                }, {
+                    Id: '3',
+                    pic: '',
+                    name: '深海鱼油',
+                    age: 22,
+                    sex: '北海道，日本',
+                    more: ''
+                }, {
+                    Id: '4',
+                    pic: '',
+                    name: '腌鲱鱼罐头',
+                    age: 36,
+                    sex: '瑞典',
+                    more: ''
+                }],
+                pagesize: 5,
+                curpage:1,
+            },
+            methods:{
+                createPerson: function(){
+                  if (this.newPerson.Id== 0) {
+                    this.newPerson.Id = this.people.length + 1;
+                    this.people.push(this.newPerson);
+                  }  
+                    // 添加完newPerson对象后，重置newPerson对象
+                    this.newPerson = {Id: '0',pic: '',name: '', age: 0, sex: '',more: ''}
+                },
+                deletePerson: function(index){
+                    // 删一个数组元素
+                    this.people.splice(index,1);
+                //     for (var i=1;i<this.people.length;i++){
+                //     if (this.people[i].Id == id) {
+                //         this.people.splice(i, 1);console.log(i);
+                //         break;
+                //     }
+                    
+                // }
+                },
+                editPerson: function(Person) {
+                  this.newPerson = Person;
+                }
+            }
+        })
+    </script>
+    <nav aria-label="Page navigation" style="float: right;">
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<!--     <div id='pagenav' style="float: right;">
+    <nav>
+        <ul class='pagination pagination-sm'>
+            <template v-for='page in Math.ceil(people.length/pagesize) '>
+                <li v-on:click='PrePage()' id="prepage" v-if='page==1' class='disabled'><a href='#'>上一页</a></li>
+                <li v-if='page==1' class='active' v-on:click='NumPage(page,$event)'><a href='#'>{{page}}</a></li>
+                <li v-else v-on:click='NumPage(page,$event)'><a href='#'>{{page}}</a></li>
+                <li id="nextpage" v-on:click='NextPage()' v-if='page==Math.ceil(people.length/pagesize)'><a href='#'>下一页</a></li>
+            </template>
+        </ul>
+    </nav>
+</div>
+<script type='text/javascript'>
+//ViewModel
+var vue = new Vue({
+    el: '#pagenav',
+    data: {
+        pages: 5
+    },
+        methods: {
+            //上一页方法
+            PrePage: function (event) {
+                $('.pagination .active').prev().trigger('click');
+            },
+            //下一页方法
+            NextPage: function (event) {
+                $('.pagination .active').next().trigger('click');
+            },
+            //点击页码的方法
+            NumPage: function (num, event) {
+                if (this.curpage == num) {
+                    return;
+                }
+                this.curpage = num;
+                $('.pagination li').removeClass('active');
+                if (event.target.tagName.toUpperCase() == 'LI') {
+                    $(event.target).addClass('active');
+                }
+                else {
+                    $(event.target).parent().addClass('active');
+                }
+                if (this.curpage == 1) {
+                    $('#prepage').addClass('disabled');
+                }
+                else {
+                    $('#prepage').removeClass('disabled');
+                }
+                if (this.curpage == Math.ceil(this.rows.length / this.pagesize)) {
+                    $('#nextpage').addClass('disabled');
+                }
+                else {
+                    $('#nextpage').removeClass('disabled');
+                }
+            }
+        }
+    });
+
+</script> -->
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

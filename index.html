@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ZH-CN">
+<head>
+    <title>landing page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+</head>
+<style>
+
+		body {
+			padding-top: 20px;
+			font-size: 16px;
+			font-family: "Open Sans",serif;
+			background: url(images/5.jpg);
+		}
+
+		h1 {
+			font-family: "Abel", Arial, sans-serif;
+			font-weight: 400;
+			font-size: 40px;
+			line-height: 80px;
+			text-align: center;
+			margin-top: 60px;
+		}
+
+		.margin-base-vertical {
+			margin: 40px 0;
+		}
+		#main{
+			background-color: rgba(255,255,255,0.6);
+			border-radius: 10px;
+		}
+
+
+	</style>
+<body>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-6 col-md-offset-3" id="main">
+    			<h1>后台管理登录系统</h1>
+    			<form class="form-horizontal">
+				  <div class="form-group">
+                    <label class="col-lg-3 control-label">用户名</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" name="username" />
+                    </div>
+                </div>
+				  <div class="form-group">
+                    <label class="col-lg-3 control-label">密码</label>
+                    <div class="col-lg-8">
+                        <input type="password" class="form-control" name="password" />
+                    </div>
+                </div>
+				  <div class="form-group">
+				    <div class="col-sm-offset-3 col-sm-9">
+				      <div class="checkbox">
+				        <label>
+				          <input type="checkbox"> 一周内免密登录
+				        </label>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="col-sm-offset-3 col-sm-9">
+				      <button type="submit" class="btn btn-primary">&nbsp;登&nbsp; &nbsp;录&nbsp;</button>
+				    </div>
+				  </div>
+				</form>
+				<div style="height: 100px;"></div>
+    		</div>
+    	</div>
+  
+    </div>
+
+</body>
+</html>
